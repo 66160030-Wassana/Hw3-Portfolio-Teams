@@ -1,0 +1,27 @@
+{
+  "name": "hw3-portfolio-teams",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/66160030-Wassana/Hw3-Portfolio-Teams.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/66160030-Wassana/Hw3-Portfolio-Teams/issues"
+  },
+  "homepage": "https://github.com/66160030-Wassana/Hw3-Portfolio-Teams#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.8.8",
+    "postcss": "^7.0.39",
+    "taillwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
+    "tailwindcss": "^4.0.0"
+  }
+}
