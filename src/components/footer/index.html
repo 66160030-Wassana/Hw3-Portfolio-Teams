@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* ปรับแต่งสำหรับ hamburger menu */
+    .mobile-menu {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu {
+        display: block;
+      }
+      .desktop-menu {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <section id="footer" class="bg-white-100">
+    <div class="bg-gray-900 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-center">
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Contact Information</h3>
+                <p>Email : karinalopez@gmail.com</p>
+                <p>Line : @karinalopez</p>
+                <p>Phone : 094-124-2464</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Menu Website</h3>
+                <ul>
+                    <li><a href="#home" class="hover:text-blue-500 hover:underline">Home</a></li>
+                    <li><a href="#about" class="hover:text-blue-500 hover:underline">About</a></li>
+                    <li><a href="#projects" class="hover:text-blue-500 hover:underline">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-blue-500 hover:underline">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Social Media</h3>
+                <ul class="flex flex-col gap-2 items-center">
+                    <li><a href="#" class="flex gap-2 hover:text-blue-500 hover:underline"><img src="images/facebook.png" alt="Facebook" class="w-6 h-6"> Facebook</a></li>
+                    <li><a href="#" class="flex gap-2 hover:text-blue-500 hover:underline"><img src="images/instagram.png" alt="Instagram" class="w-6 h-6"> Instagram</a></li>
+                    <li><a href="#" class="flex gap-2 hover:text-blue-500 hover:underline"><img src="images/twitter.png" alt="Twitter" class="w-6 h-6"> Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="text-center bottom-0 w-full bg-gray-900 text-white py-5 border border-b-0 border-r-0 border-l-0">
+            <p>&copy;2025 Portfolio-Team.</p>
+        </div>
+    </footer>
+  </section>
+
+  <script>
+    // JavaScript สำหรับ toggle hamburger menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+
+    menuToggle.addEventListener('click', () => {
+      // dropdownMenu.classList.toggle('hidden');
+      loadComponent('components/navbar-hero/index.html', 'navbar-hero'); 
+      loadComponent('components/about-skills/index.html', 'about-skills'); 
+      loadComponent('components/projects/index.html', 'projects'); 
+      loadComponent('components/contact/index.html', 'contact'); 
+      loadComponent('components/footer/index.html', 'footer');
+    });
+  </script>
+  
+</body>
+</html>
