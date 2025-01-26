@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* ปรับแต่งสำหรับ hamburger menu */
+    .mobile-menu {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu {
+        display: block;
+      }
+      .desktop-menu {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <!-- Navbar -->
+  <nav class="bg-white shadow-lg">
+    <div class="container md px-2 py-4 flex items-center justify-between">
+      <a href="#" class="text-xl font-bold">Portfolio-Team</a>
+      <!-- Desktop Menu -->
+      <ul class="desktop-menu hidden md:flex space-x-6">
+        <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-500">About</a></li>
+        <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+        <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+      </ul>
+      <!-- Hamburger Menu -->
+      <div class="mobile-menu">
+        <button id="menu-toggle" class="text-xl focus:outline-none">☰</button>
+      </div>
+    </div>
+    <!-- Mobile Dropdown Menu -->
+    <div id="dropdown-menu" class="hidden bg-white shadow-md">
+      <ul class="flex flex-col space-y-2 p-4">
+        <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-500">About</a></li>
+        <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+        <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section id="contact" class="py-20 bg-gray-100">
+    <div>
+        <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-lg mx-auto">
+            <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Contact</h1>
+            <form action="#" method="POST" role="form">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium">ชื่อ-นามสกุล *</label>
+                    <input type="text" id="name" name="name" placeholder="ใส่ชื่อและนามสกุล"
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" 
+                        required minlength="2" maxlength="100">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium">อีเมล *</label>
+                    <input type="email" id="email" name="email" placeholder="ใส่อีเมล"
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" 
+                        required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-sm font-medium">ข้อความ *</label>
+                    <textarea id="message" name="message" placeholder="ใส่ข้อความ"
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" 
+                        rows="4" required minlength="10" rows="5"></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    ส่งข้อความ
+                </button>
+            </form>
+        </div>
+    </div>
+  </section>
+
+  <script>
+    // JavaScript สำหรับ toggle hamburger menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+
+    menuToggle.addEventListener('click', () => {
+      // dropdownMenu.classList.toggle('hidden');
+      loadComponent('components/navbar-hero/index.html', 'navbar-hero'); 
+      loadComponent('components/about-skills/index.html', 'about-skills'); 
+      loadComponent('components/projects/index.html', 'projects'); 
+      loadComponent('components/contact/index.html', 'contact'); 
+      loadComponent('components/footer/index.html', 'footer');
+    });
+  </script>
+  
+</body>
+</html>
