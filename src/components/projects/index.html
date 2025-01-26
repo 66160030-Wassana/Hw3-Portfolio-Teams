@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* ปรับแต่งสำหรับ hamburger menu */
+    .mobile-menu {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu {
+        display: block;
+      }
+      .desktop-menu {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <!-- Navbar -->
+  <nav class="bg-white shadow-lg">
+    <div class="container md px-2 py-4 flex items-center justify-between">
+      <a href="#" class="text-xl font-bold">Portfolio-Team</a>
+      <!-- Desktop Menu -->
+      <ul class="desktop-menu hidden md:flex space-x-6">
+        <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-500">About</a></li>
+        <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+        <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+      </ul>
+      <!-- Hamburger Menu -->
+      <div class="mobile-menu">
+        <button id="menu-toggle" class="text-xl focus:outline-none">☰</button>
+      </div>
+    </div>
+    <!-- Mobile Dropdown Menu -->
+    <div id="dropdown-menu" class="hidden bg-white shadow-md">
+      <ul class="flex flex-col space-y-2 p-4">
+        <li><a href="#home" class="hover:text-blue-500">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-500">About</a></li>
+        <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+        <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section id="projects" class="py-20 bg-white">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">My Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+        <div class="bg-gray-100 p-5 shadow-md hover:shadow-lg">
+        <img src="images/project1.jpg" alt="Project 1">
+          <h3 class="font-bold">Project 1</h3>
+          <p>การพัฒนาเขียนเว็บไซต์แนะนำสถานที่ท่องเที่ยวในจังหวัดสมุทรปราการ</p>
+          <p>ภาษาที่ใช้พัฒนา: HTML, CSS, JavaScript</p>
+          <a href="https://github.com/66160030-Wassana/website-travel-bootstrap" target="_blank" class="text-blue-500">View on GitHub</a>
+        </div>
+        <div class="bg-gray-100 p-5 shadow-md hover:shadow-lg">
+            <img src="images/project2.webp" alt="Project 2">
+              <h3 class="font-bold">Project 2</h3>
+              <p>การพัฒนาเขียนเว็บไซต์แนะนำสถานที่ท่องเที่ยวในจังหวัดนครราชสีมา</p>
+              <p>ภาษาที่ใช้พัฒนา: HTML, CSS, JavaScript</p>
+              <a href="https://github.com/66160008/hw2_bootstrap" target="_blank" class="text-blue-500">View on GitHub</a>
+        </div>
+        <div class="bg-gray-100 p-5 shadow-md hover:shadow-lg">
+          <img src="images/project3.webp" alt="Project 3">
+            <h3 class="font-bold">Project 3</h3>
+            <p>การพัฒนาเขียนเว็บไซต์แนะนำสถานที่ท่องเที่ยวในจังหวัดระยอง</p>
+            <p>ภาษาที่ใช้พัฒนา: HTML, CSS, JavaScript</p>
+            <a href="https://github.com/66160148/hw2_bootstrap" target="_blank" class="text-blue-500">View on GitHub</a>
+      </div>
+      <div class="bg-gray-100 p-5 shadow-md hover:shadow-lg">
+        <img src="images/project4.jpg" alt="Project 4">
+          <h3 class="font-bold">Project 4</h3>
+          <p>การพัฒนาเขียนเว็บไซต์แนะนำสถานที่ท่องเที่ยวในจังหวัดฉะเชิงเทรา</p>
+          <p>ภาษาที่ใช้พัฒนา: HTML, CSS, JavaScript</p>
+          <a href="https://github.com/66160265/hw2-bootstrap" target="_blank" class="text-blue-500">View on GitHub</a>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // JavaScript สำหรับ toggle hamburger menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+
+    menuToggle.addEventListener('click', () => {
+    dropdownMenu.classList.toggle('hidden');
+    });
+
+    document.addEventListener('DOMContentLoaded', () => { 
+            loadComponent('components/navbar-hero/index.html', 'navbar-hero'); 
+            loadComponent('components/hero/index.html', 'hero'); 
+            loadComponent('components/about/index.html', 'about'); 
+            loadComponent('components/skills/index.html', 'skills'); 
+            loadComponent('components/projects/index.html', 'projects'); 
+            loadComponent('components/contact/index.html', 'contact'); 
+            loadComponent('components/footer/index.html', 'footer'); 
+        });
+  </script>
+  
+</body>
+</html>
